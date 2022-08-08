@@ -1,2 +1,32 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 9. Напишите программу, которая выводит случайное число из отрезка [10, 99] и показывает наибольшую цифру числа.
+// 78 -> 8
+// 12-> 2
+// 85 -> 8
+
+// методы возвратные и невозвратные
+
+
+
+int number = new Random ().Next (10, 100); // Некст включает в диапазон левое число (10), но исключает правое (100), 
+// соответсвенно диапазон 10 - 99.
+Console.WriteLine($"Наше случайное {number} число");
+
+// Также можно записать как
+// Random rand = new Random(); // rand - объект рандома (переменная)
+// int number = rand.Next(10, 99); //В некст задаем диапазон случайных чисел - Next это диапазон указатель
+
+int digit2 = number % 10; //По остатку берет 2-ю цифру
+int digit1 = number / 10; //Берет первую цифру, т.к. int
+if (digit1 > digit2)
+{
+    Console.WriteLine(digit1);
+}
+else if (digit2 > digit1)
+{
+    Console.Write(digit2);
+}
+else
+{
+    Console.Write("Цифры равны");
+}
+
